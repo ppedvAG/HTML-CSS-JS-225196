@@ -138,6 +138,176 @@
 
         </div>
 
+        <div>
+            <h2>Listen in HTML</h2>
+            <h3>Die ungeordnete Liste:</h3>
+            <p>Die ungeordnete Liste dient der Aufzählung von Stichpunkten, Vorbedingungen wobei alles ohne Gewichtung passiert</p>
+            <p>Das ul-Element darf entweder li-Elemente oder andere ul-Elemente in sich verschachtelt haben</p>
+                <ul>
+                    <li>ABC</li>
+                    <li>DEF</li>
+                    <li>XYZ
+                        <ul>
+                            <li>Unterpunkt</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>Die geordnete Liste</h3>
+                <p>Dient ebenfalls der Auflistung, diesmal allerdings von Einzelschritten oder von Rankings</p>
+                <p>Das ol-Element darf entweder li-Elemente oder andere ol-Elemente in sich enthalten</p>
+
+                <ol>
+                    <li>Mehl</li>
+                    <li>Eier</li>
+                    <li>Milch</li>
+                    <li>Getränke
+                        <ol>
+                            <li>Cola
+                                <ol>
+                                    <li>Light</li>
+                                    <li>Zero</li>
+                                </ol>
+                            </li>
+                            <li>Wasser</li>
+                        </ol>
+                    </li>
+                </ol>
+
+                <h4>Die Attribute des ol-Elements</h4>
+
+                <ol>
+                    <li>type</li>
+                    <li>start</li>
+                    <li>reversed</li>
+                </ol>
+                <p>Wir können diese Attribute beliebig mischen</p>
+                <p>Type:</p>
+                <ol type="a">
+                    <li>A</li>
+                    <li>B</li>
+                </ol>
+
+                <p>Mögliche Werte für type:</p>
+                <ul>
+                    <li>A - Zählt mit Großbuchtstaben durch</li>
+                    <li>a - Zählt mit Kleinbuchstaben durch</li>
+                    <li>I - Zählt mit großgeschriebenen römischen Zahlen durch</li>
+                    <li>i - Zählt mit kleingeschriebenen römischen Zahlen durch</li>
+                    <li>1 - Zählt mit arabischen Ziffern durch, ist standard</li>
+                </ul>
+
+                <p>Start:</p>
+                <p>Sagt wo das Zählen beginnen soll</p>
+                <ol type="1" start="54">
+                    <li>A</li>
+                    <li>B</li>
+                </ol>
+
+                <p>Reversed:</p>
+                <p>Ist ein boolesches Attribut, also ein Attribut das nur Wahr oder Falsch sein kann</p>
+                <p>Reversed dreht die Zählreihenfolge um</p>
+                <ol type="1" start="54" reversed>
+                    <li>A</li>
+                    <li>B</li>
+                </ol>
+
+                <h3>Die description List:</h3>
+                <p>Die dl dient nicht der Aufzählung, sonder dient der Definition von Begriffen</p>
+                <p>Die dl enthält dt - description term - und dd - description detail - Elemente</p>
+                <p>Dabei ist der dt-Tag der Begriff, der beschrieben wird und dd ist die Beschreibung selbst</p>
+
+                <dl>
+                    <dt>HTML</dt>
+                    <dd>Die meistverbreitete Markuplanguage im Netz</dd>
+                    <dt>JavaScript</dt>
+                    <dd>Die meistbenutzte Programmiersprache im Web</dd>
+                </dl>
+
+            </div>
+            <div>
+                <h2>Tabellen in HTML</h2>
+                <p>Sind in mehrere Teile aufgespalten</p>
+                <p>Verwendete Tags:</p>
+                <ul>
+                    <li>
+                        table
+                    </li>
+                    <li>
+                        thead
+                    </li>
+                    <li>
+                        tbody
+                    </li>
+                    <li>tfoot</li>
+                    <li>tr</li>
+                    <li>th</li>
+                    <li>td</li>
+                </ul>
+
+                <h3>Beispiel-Tabelle:</h3>
+                <table>
+                    <!-- Definiert den Anfang und das Ende einer Tabelle -->
+                    <thead>
+                        <!-- Enthält Informationen über die Tabelle, wie z.B die Legende -->
+                        <tr>
+                            <!-- Erzeugt eine neue Zeile -->
+                            <th scope="col">Produkt</th>
+                            <!-- Überschriftzelle -->
+                            <th scope="col">Anzahl</th>
+                            <th scope="col">Stückpreis</th>
+                            <th scope="col">Gesamtpreis</th>
+                            <!-- scope-Attribut
+                                    => definiert ob die Überschrift für eine Spalte oder eine Zeile gilt
+                                    Mögliche Werte:
+                                        col
+                                        row
+                                    Richtet sich an Screenreader 
+                            -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Enthält die tatsächlichen Daten der Tabelle -->
+                        <tr>
+                            <th scope="row">Laptop</th>
+                            <td>5</td>
+                            <!-- Tabellenzellen, die Daten und keine Überschriften enthalten -->
+                            <td>1.500€</td>
+                            <td>7.500€</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Monitor</th>
+                            <td>5</td>
+                            <td>200€</td>
+                            <td>1.000€</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th scope="row" colspan="3">Preis insgesamt:</th>
+                            <!-- <td></td><td></td>-->
+                            <!-- Auskommentiert, da leere Elemente nicht verwendet werden sollten -->
+                            <!-- Alternative zu leeren td-Elementen:
+                                 colspan-Attribut
+                                 Gibt an über wie viele Spalten sich unser Elemente erstrecken soll
+                            -->
+                            <td>8.500€</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div>
+                <h2>Links in HTML</h2>
+                <p>Um Links darzustellen benutzen wir den anchor-Tag</p>
+                <p>Der anchor-Tag muss über das href="" Attribut verfügen</p>
+                <p>Ein häufig benutzes Attribut für den a-Tag ist das target-Attribut</p>
+                <p>Mit dem target-Attribut können wir den Browser anweisen den Link in einem neuen Tab zu öffnen</p>
+                <p>Dafür benutzen wir target="_blank"</p>
+                <a href="https://ppedv.de" target="_blank">ppedv</a>
+                <p>Meistens verwenden wir das target-Attribut wenn wir auf externe Seiten verweisen, damit
+                    der Benutzer weiterhin auf unserer Seite bleibt
+                </p>
+            </div>
 
 </body>
 </html>
