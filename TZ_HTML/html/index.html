@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!--
+
+    <tagname> Inhalt </Tagname>
+    Starttag Content Endtag
+    Tagnamen sind nicht case-sensitive
+    Konvention ist es aber die Tagnamen klein zu schreiben
+    Tags sind verschachtelbar
+
+-->
+<html lang="en">
+<head>
+
+    <!--
+        Der Head enthält Metainformationen über unsere Seite, wie z.B. den Titel, Stylesheets und Skripte
+    -->
+
+    <meta charset="UTF-8">
+    <!--
+        Weist den Browser welche encodierung verwendet werden soll
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+        Dieser meta-Tag stellt die Breite des Dokuments auf die Breite des genutzten Gerätes/
+        Browsers ein und definiert den anfänglichen Zoom-Faktor
+    -->
+
+    <title>
+        <!-- Was im Tab als Name angezeigt wird oder bei der Google Suche-->
+        Meine Erste HTML-Seite 
+    </title>
+    <meta name="description" content="Ich bin der Text, der in der Google/Bing Suche unter dem Title der Seite erscheint">
+
+    <!--
+        Shortcut in Visual Studio Code:
+        html:5 => Tab drücken
+        Generiert uns doctype + html + head und body
+    -->
+
+</head>
+<body>
+    <!--
+        Der Body enthält den tatsächlich sichtbaren Inhalt unserer Seite
+        Darf nur einmal pro HTML Dokument vorkommen
+    -->
+
+    <div>
+        <!--
+            Steht für division, also eine Unterteilung
+
+            Benutzt man um die Seite in einzelne Bereiche aufzugliedern,
+            z.B in eine Navigationsleiste und den tatsächlichen Inhalt
+        -->
+
+        <ul>
+            <!--
+                Steht für ungeordnete Liste und wird standardmäßig als Liste mit Aufzählungspunkten dargestellt
+            -->
+            <!-- Enthält immer nur li-Elemente oder weitere ul-Elemente -->
+            <li>
+                <!-- Steht für list-Item und ist ein Aufzählungspunkt -->
+                <!-- Im Falle einer Navigationsleiste enthält das list item anchor-Tags -->
+                <a href="#">Home</a>
+                <!-- Ein anchor-Tag verlinkt immer auf eine andere Seite, kann sowohl auf unserer eigenen Website sein oder auf eine andere Domain
+                     z.B Wikipedia.de -->
+                     <!-- Der A-Tag muss über das href-Attribut verfügen-->
+            </li>
+            <li>
+                <a href="https://de.wikipedia.org/wiki/Wikipedia:Hauptseite">externe Seite</a>
+                <!-- Bei externen Seiten muss mit absolutem Pfad gearbeitet werden-->
+
+            </li>
+            <li>
+                <a href="\aboutme.html">Interne Seite</a>
+                <!-- Bei Internen Seiten reicht der relative Pfad -->
+            </li>
+        </ul>
+
+    </div>
+
+    <div>
+        <h1>Ich bin die Hauptüberschrift der Seite</h1>
+        <!-- Die h*-Tags gibt es von h1(wichtigste) bis h6(unwichtigste)-->
+        <!-- Sie werden immer fett geschrieben und je nach Zahl unterschiedlich groß geschrieben-->
+
+        <!-- h1 "sollte" nur ein einziges mal pro html Dokument verwendet werden-->
+        <h6>Ich bin eine der unwichtigsten Überschriften</h6>
+
+        <h2>Texte in HTML</h2>
+        <p>Ich bin ein Paragraph</p>
+        <span>Ich bin eine Zeichenfolge</span>
+        <p>Unterschied zwischen p-Tag und span-Tag ist die Darstellung.
+            Der p-Tag erzwingt immer eine neue Zeile, weil er standardmäßig eine ganze Zeile an Platz beanspricht.
+        </p>
+        <span>Der span-Tag verbraucht nur so viel Platz wie er tatsächlich beansprucht</span>
+        <span>
+            Ich werde nicht in einer neuen Zeile stehen
+        </span>
+        <p> Unnötige Leerzeichen werden gelöscht           asddsa                    ss</p>
+        <p>Jegliche Formatierung wird ignoriert, außer einzelne Leerzeichen</p>
+        <span> test     test    test</span>
+        <h3>Ausnahme: </h3>
+            <pre>Beim pre-Tag, was für preformatted Text steht, wird die Formatierung       Beibehalten
+
+                Wie 
+                Man
+                
+                Sehen kann
+            </pre>
+            <h3 title="Tooltip">Kleines Gimmick:</h3>
+            <p title="Ich bin ein Tooltip">Man kann bei allen Elementen Tolltips mit dem title-Attribut darstellen, also hover über mich.</p>
+            <h3>Styling von Text mittels HTML:</h3>
+            <p><strong>Um Text fett darzustellen haben wir den strong-Tag</strong> und <em>um Text kursiv darzustellen haben wir den em-Tag</em></p>
+            <p>Früher wurde statt dem strong-Tag der b-Tag verwendet und statt em wurde der i-Tag verwendet</p>
+            <p>Im Gegensatz zum b und i-Tag werden der strong und em-Tag von Screenreadern besonders betont.</p>
+            <p>Der i-Tag wird heutzutage oft als icon-Tag verwendet</p>
+
+            <h3>WEitere nützliche Textelemente:</h3>
+
+            <p>Zitate:</p>
+            <blockquote>Ich bin für längere Zitate gedacht</blockquote>
+            <q>Ich bin für kurze Zitate gedacht</q>
+            <p>Abkürzung:</p>
+            <abbr title="Hyper Text Markup Language">HTML</abbr>
+            <p>Titel und ähnliches:</p>
+            <cite>Ich bin ein Buch/Filmtitel</cite>
+            <p>Adressen:</p>
+            <address>1000 Musterstadt</address>
+            <p>Sub-/Superskript</p>
+            <p>Für Hochzahlen z.B</p>
+            <p>2<sup>4</sup></p>
+            <p>Für Fußnoten:</p>
+            <p>Quelle<sub>Fußnote</sub></p>
+            <p>Rechtliche Hinweise:</p>
+            <small>Ich werde kleiner dargestellt als normaler Text</small>
+            <p>Farbliche Markierung:</p>
+            <mark>Ich werde gelb hinterlegt</mark>
+
+        </div>
+
+
+</body>
+</html>
