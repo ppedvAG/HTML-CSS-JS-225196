@@ -74,6 +74,9 @@
                 <a href="\aboutme.html">Interne Seite</a>
                 <!-- Bei Internen Seiten reicht der relative Pfad -->
             </li>
+            <li>
+                <a href="#last-chapter">Gehe zum letzten Kapitel</a>
+            </li>
         </ul>
 
     </div>
@@ -309,5 +312,79 @@
                 </p>
             </div>
 
+            <div>
+                    <h2>Bilder in HTML</h2>
+                    <p>Wir haben zwei Möglichkeiten Bilder in HTML darzustellen</p>
+                    <p>Die klassische Variante ist die Verwendung des img-Tags</p>
+                    <img src="../Screenshot_20221026_090351.png" alt="Platzhalterbild">
+                    <p>Der img-Tag sollte über die Attribute hred(Pfad/Link zum Bild) sowie alt(kurze Beschreibung des Bildes)</p>
+                    <p>Platzhalterbilder: https://via.placeholder.com/BreitexHöhe</p>
+                    <p>Moderne Alternative zum img-Tag ist der picture-Tag</p>
+                <picture>
+                    <source media="(min-width:750px)" srcset="https://via.placeholder.com/750x750">
+                    <source media="(min-width:450px)" srcset="https://via.placeholder.com/450x450">
+                    <img src="https://via.placeholder.com/250x250" alt="Platzhalterbild">
+                </picture>
+                <p>Der picture-Tag selber hat keine Attribute, beinhaltet aber mindestens ein source-Tag und ein img-Tag, der immer als letztes geeschrieben wird</p>
+                <p>Wir gehen dabei vom Größten zum kleinsten Bild</p>
+                <p>Der Browser prüft von oben nach unten durch ob das benutzte Gerät die Bedingungen
+                    erfüllt und stellt das entsprechende Element dar. Wenn keine der Bedingungen (Inhalt von media)
+                    erfüllt wird nimmt er den img-Tag. Falls der Browser den picture-Tag nicht unterstützt wird ebenfalls
+                    der img-Tag verwendet
+                </p>
+                <p>Falls eines der Bilder in den Source-Tags nicht geladen werden kann, wird der alt-Text vom 
+                    img-Tag dargestellt
+                </p>
+
+            </div>
+
+            <div>
+                
+                <h2 class="chapter-heading">Videos in HTML</h2>
+                <p>Der video-Tag funktioniert recht ähnlich wie der picture-Tag d.h auch hier umschließt 
+                    der video-Tag eins oder mehrere source-Tags
+                </p>
+                <p>Diesmal definieren die source-Tags aber die Dateiendung des Videos und der Browser 
+                    nimmt sich das erste kompatible Format
+                </p>
+                <video muted controls poster="https://via.placeholder.com/320y180">
+                    <source src="https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
+                    type="video/mp4">
+                    <source src="https://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_stereo.ogg"
+                    type="video/ogg">
+                </video>
+
+                <h3>Attribute des video-Tags</h3>
+                <ul>
+                    <li>autoplay - Boolesches Attribut also brauchen wir keinen Wert, startet das Video
+                        automatisch sobald man die Seite betritt
+                    </li>
+                    <li>
+                        muted - Boolesches Attribut, das Video wird standardmäßig stumm abgespielt
+                    </li>
+                    <li>
+                        controls - Boolesches Attribut, stellt eine Benutzeroberfläche für das Video zur Verfügung
+                    </li>
+                    <li> 
+                        loop - Boolesches Attribut, lässt das Video nach durchlauf erneut beginnen
+                    </li>
+                    <li>
+                        poster - Bild das dargestellt wird, wenn das Video nicht gestartet wurde, Wert entspricht Pfad/Link zum Bild 
+                    </li>
+
+                </ul>
+
+                <a href="https://en.wikipedia.org/wiki/HTML5_videoBrowser_support">unterstützte Formate nach Browser</a>
+
+            </div>
+            <div>
+                <h2 class="chapter-heading" id="last-chapter">Das ID-Attribut</h2>
+                <p>Dient ebenfalls dem gezielteren Styling bzw ansprechen per JavaScript. Sollte einzigartig sein pro HTML Seite</p>
+                <p>Es gelten die selben Best Practice Konventionen wie bei den Klassen</p>
+                <p>Können mit Klassen gemischt werden</p>
+                <p>Kann auch in einem anchor-Tag verlinkt werden</p>
+                <a href="#last-chapter">Gehe zum letzten Kapitel</a>
+                <p>Syntax: href="#id-Name"</p>
+            </div>
 </body>
 </html>
