@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NTH-Selektoren B</title>
+
+    <style>
+
+        table {
+            border-collapse: collapse;
+            font-family: Calibri, sans-serif;
+            margin: 3em auto;
+        }
+
+        th,
+        td {
+            border: medium solid black;
+            padding: 0.3em;
+            text-align: center;
+        }
+
+        .knr {
+            width: 5em;
+        }
+
+        .names {
+            width: 14em;
+        }
+
+
+        /* Überschriften- und Kundennr.-Leiste */
+
+        th,
+        td:first-child {
+            background-color: rgb(99, 165, 55);
+            color: white;
+            font-weight: bold;
+        }
+
+        /* dunklerer Zeilenhintergrund */
+
+        tr:nth-child(odd) {
+            background-color: rgb(191, 226, 168);
+        }
+
+        /* hellerer Zeilenhintergrund */
+
+        tr:nth-child(even) {
+            background-color: rgb(223, 240, 211);
+        }
+
+        /* Eine bestimmte Zeile anwählen: */
+
+        tr:nth-child(7) {
+            background-color: rgb(185, 231, 252);
+        }
+
+        /* ...oder für das Styling eines bestimmten Elementes eine ID vergeben: */
+
+        #bond {
+            background-color: rgb(8, 164, 238);
+        }
+
+        tr:hover {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th class="knr">Kundennr.</th>
+                <th class="names">Vorname</th>
+                <th class="names">Nachname</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>001</td>
+                <td>Fritz</td>
+                <td>Meier</td>
+            </tr>
+            <tr>
+                <td>002</td>
+                <td>Susi</td>
+                <td>Huber</td>
+            </tr>
+            <tr>
+                <td>003</td>
+                <td>Heinrich</td>
+                <td>Bauer</td>
+            </tr>
+            <tr>
+                <td>004</td>
+                <td>Maria</td>
+                <td>Brunner</td>
+            </tr>
+            <tr>
+                <td>005</td>
+                <td>Sigmund</td>
+                <td>König</td>
+            </tr>
+            <tr>
+                <td>006</td>
+                <td>Andrea</td>
+                <td>Müller</td>
+            </tr>
+            <tr>
+                <td id="bond">007</td>
+                <td>James</td>
+                <td>Bond</td>
+            </tr>
+            <tr>
+                <td>008</td>
+                <td>Max</td>
+                <td>Mustermann</td>
+            </tr>
+        </tbody>
+    </table></div>
+
+</body>
+
+</html>

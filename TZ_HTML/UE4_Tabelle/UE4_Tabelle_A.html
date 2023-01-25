@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NTH-Selektoren A</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            font-family: Calibri, sans-serif;
+            margin: 3em auto;
+            width: 50%;
+        }
+
+        th, td{
+            border: medium solid black;
+            padding: 0.3em;
+        }
+
+        th{
+            background-color: rgb(99, 165, 55);
+            color: white;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        tr:nth-child(odd){
+            background-color: rgb(191, 226, 168);
+        }
+
+        tr:nth-child(even) {
+            background-color: rgb(223, 240, 211);
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Kundennr.</th>
+                <th>Vorname</th>
+                <th>Nachname</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>001</td>
+                <td>Fritz</td>
+                <td>Meier</td>
+            </tr>
+            <tr>
+                <td>002</td>
+                <td>Susi</td>
+                <td>Huber</td>
+            </tr>
+            <tr>
+                <td>003</td>
+                <td>Heinrich</td>
+                <td>Bauer</td>
+            </tr>
+            <tr>
+                <td>004</td>
+                <td>Maria</td>
+                <td>Brunner</td>
+            </tr>
+            <tr>
+                <td>005</td>
+                <td>Sigmund</td>
+                <td>König</td>
+            </tr>
+            <tr>
+                <td>006</td>
+                <td>Andrea</td>
+                <td>Müller</td>
+            </tr>
+            <tr>
+                <td>007</td>
+                <td>James</td>
+                <td>Bond</td>
+            </tr>
+            <tr>
+                <td>008</td>
+                <td>Max</td>
+                <td>Mustermann</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>
