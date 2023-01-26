@@ -1,0 +1,237 @@
+/*
+    Syntax: 
+
+    selector {
+        attribute: value;
+    }
+
+    Universalselektor *
+        Stylt alle Elemente
+    
+    Elementselektor p {}
+        Stylt alle entsprechende Elemente
+
+    Klassenselektor .klassenName {}
+        Stylt alle Elemente die Teil der Klasse sind
+
+    Idselektor #idNamen {}
+        Stylt das Element mit der entsprechenden ID
+
+*/
+
+
+* {
+    color: grey;
+}
+
+p {
+    color: black;
+}
+
+h2 {
+    color: pink;
+}
+
+.chapter-heading {
+    color: black;
+    font-size: 36px;
+}
+
+#first-paragraph {
+    display: none;
+}
+
+td, th {
+    color: green;
+}
+
+/*
+
+    Erweiterte Selektoren: 
+
+    Gruppen-Selektor: e11, e12, e13, ... {}
+
+    Direkte Geschwister-Selektor: e11 + e12 {}
+
+    Allgemeine Geschwister-Selektor e11 ~ e12 {}
+
+    Allgemeiner Nachfahren-Selektor e1 e2 {}
+        Stylt alle Nachfahren, egal wie weit sie verschachtelt sind
+    
+    Direkte Nachfahren-Selektor e1 > e2 {} Child-Selector
+
+    ID/Klassen kombinieren el.Klasse {}
+                            el#id {}
+
+
+*/
+
+p + h2 {
+    text-decoration: underline;
+}
+
+
+h1 ~ h2 {
+    text-decoration: overline;
+}
+
+ul li {
+    color: blue;
+}
+
+ul > li {
+    color: brown;
+}
+
+h1.chapter-heading {
+    font-size: 42px;
+    margin: 2em;
+
+}
+
+
+/*
+    Größeneinheiten in CSS
+
+
+    Absolute Einheiten:
+
+    px, Pixel
+    in, Inch
+    pt, Point
+    pc, Pica
+    mm, milimeter
+    cm, centimeter
+
+    Werden nicht mehr so häufig verwendet, da sie immer die selbe Größe haben
+
+
+    Relative Einheiten: 
+
+    em, element Relativ zur Schriftgröße des Elements, d.h. 2em entsprechen der doppelten Schriftgröße des Elements
+    %, Relativ zur Größe des Elternelementes
+    rem, Relativ zur SChriftgröße des root-Elements (html)
+    vw, 1% der Breite des Viewports (Browserfenster)
+    vh, dasselbe bloß mit der Höhe
+    vmin, 1% der kleineren Seite des Viewports
+    vmax, 1% der größeren Seite des Viewports
+    ch, Breite der 0 der ausgwählten Schriftart
+    ex, Höhe der x-Achse des Buchstabens A in der derzeitigen Shriftart
+    
+
+    Das Box-Modell
+    Von innen nach außen in mehrere Unterblöcke aufgeteilt:
+        Content - der tatsächliche Inhalt z.B Text oder Bild des Elements
+            Größe des Contents kann mit height und width angepasst werden
+        Padding - transparenter Abstand zwischen Content und Border wird mit setzen von
+            backgroundcolor eingefärbt => Zählt als Teil des Elements
+        Border - Grenze um das Padding kann beliebig gefärbt und breite der Balken angepasst werden
+        Margin - Transparente Rand um die Border herum, dieser wird nicht von background-color eingefärbt
+*/ 
+
+div#box {
+    height: 50px;
+    background-color: aquamarine;
+    padding: 5rem;
+    border-width: 10px;
+    border-color: rebeccapurple;
+    border-style: dotted;
+    border-radius: 100%;
+    margin: 2.5rem;
+    text-align: center;
+}
+
+#pic {
+    border: 5px double black;
+    padding: 10px;
+    margin: auto;
+    display: block;
+    /*margin: auto versucht jeweils links und rechts den selben Abstand einzubauen und zentriert somit die meisten Block-Elemente*/
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+/*
+    Verschiedene Display-Arten von CSS
+
+    display: 
+
+        - block (Basis: div): 
+            Beginnen immer in einer neuen Zeile und beanspruchen die volle BReite des Elternelementes
+            Beachten height und width
+        - inline (Basis: span):
+            Starten nicht zwingend in einer neuen Zeile und beanspruchen nur so viel Platz wie nötig
+            Ignorieren height und width
+        - inline-block:
+            Kein Element ist standardmäßig inline-block, muss immer per Regel definiert werden
+            Mischt die Eigenschaften von inline und block, da es height und width beachtet, aber trotzdem mehrere Elemente
+            pro Zeile dargestellt werden können
+        - none: 
+            Versteckt das Element und die Seite verhält sich so als ob das Element nicht existieren würde
+            Wird oft in Kombi mit JavaScript benutzt um Elemente zu verstecken
+
+
+            Alternative zu display:none;
+            visibility: hidden;
+            Element wird versteckt, aber es behält seinen Platz im Layout bei
+            Kann zu s.g. Weißen Flecken führen, also Lücken wo eiegentlich ein Element wäre, es aber durch hidden versteckt wird
+            Inzwischen Größtenteils durch display:none; abgelöst
+
+
+*/
+
+/*
+
+    Positions in CSS
+
+    positions: 
+
+        - static: 
+            Jedes HTML Element ist standardmäßig static,
+            Element wird statisch platziert und ignoriert jegliche Postionsbeeinflussende Attribute
+            Postion richtet sich nach Aufbau des HTML Codes
+
+        - relative: 
+            Beachtet die postionsbeeinflussenden Attribute top, bottom, left und right
+            Element verschiebt sich relativ zu seiner Standardposition
+            Andere Elemente nehmen nicht den Ursprünglichen Platz des Elementes ein
+
+        - fixed:
+            Beachtet top, bottom, left und right
+            Element verschiebt sich relativ zum Sichtfeld
+
+        - sticky: 
+            Wechselt zwischen fixed und static
+            Sobald man an dem Element vorbeiscrollen würde, wechselt es auf fixed und bleibt dadruch dann immer im SIchtfeld des Users
+            z.B. Werbevideos, Cookies, Navbars
+
+        - absolute:
+            Funktioniert ähnlich wie fixed, aber verschiebt sich nicht relativ zum Sichtfeld sondern relativ zum nächsten
+            Vorfahren der relative oder absolute als postion hat
+            Falls kein Vorfahr relative oder absolute hat wird es in Relation zum html Tag verschoben
+
+*/
+
+#div1, #div2
+{
+    height: 50px;
+    background-color: red;
+    position: relative;
+}
+
+#div2 {
+    background-color: green;
+    position: absolute;
+    bottom: 50px;
+    float: right;
+}
+
+/*
+    Float
+    Float ändert z.B ein Bild von block auf inline, es erlaubt also mehrere Elemente in einer Zeile darzustellen
+    Float macht es una ber nochmal komfortabler, da wir direkt sagen klnnen ob es sich rechts oder links einordnen soll
+    Anwendungsfall meistens Bild in Fließtext einbauen
+*/

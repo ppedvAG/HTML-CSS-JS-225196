@@ -54,7 +54,7 @@ p {
     Ist der zweitspezifischste Selektor, nach dem ID-Selektor
 */
 
-.cool-paragraph {
-    color: slategrey;
+.cool-paragraph:hover {
+    color: green;
     font-size: 36px;
 }
