@@ -1,0 +1,84 @@
+/*
+    Die verschiedenen Selektoren: 
+
+    p Element
+    #Id
+    .Class
+
+    Kombinatoren: 
+*/
+
+h2#first-article {
+
+    color:blue;
+}
+
+h2 {
+    color: red;
+}
+
+#first-article {
+    color: chartreuse;
+}
+
+/* Spezifität wird mehr gewichtet als die Kaskadierung */
+
+h2#first-article {
+    color:violet; /* Färbt h2 ein, da es die selbe Spezifität hat, aber weiter unten definiert wurde*/
+    font-size: 24px; /* Würde so oder so angwandt werden, da sie zu keiner anderen im Konflikt steht */
+}
+
+/*
+    UND-Kombinator
+    Selektiert alle aufgezählten Elemente
+*/
+
+li, p {
+    color:rgba(13, 12, 12, 0.779);
+}
+
+/* Nachfahr/Descendant-Selektor */
+
+nav li {
+    list-style-type: none;
+}
+
+/* Direkter-Nachfahr/Child-Selector*/
+
+li>a {
+    text-decoration: none;
+    color:rgba(13, 12, 12, 0.779)
+}
+
+/* Direct-Sibling-Selector*/
+h2 + p {
+    color: red;
+}
+
+/* General Sibling Selector */
+h2 ~ p {
+    color: blue;
+}
+
+/* Attribut Selector */
+a[href="#"]  {
+    color: tomato;
+}
+
+/*
+    Pseudoelemente
+
+    Werden an einen anderen Selektor angehängt
+    Beginnen mit ::PseudoElementName
+
+    ::after - Fügt etwas als letztes Child eines Elementes an
+    ::before - Fügt etwas als erstes Child eines Elementes an
+*/
+
+li>a::before {
+    content: "Ich bin before";
+}
+
+li>a::after {
+    content: " Ich bin after";
+}
