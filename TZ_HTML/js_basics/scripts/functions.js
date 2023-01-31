@@ -59,3 +59,61 @@ console.log(testX(12, 44));
 // Übung: 
 // Schreibe eine Funktion, die prüft ob eine Zahl gerade oder ungerade ist
 // Rückgabe soll true oder false seine
+
+// FizzBuzz
+// Jede Zahl die nur durch 3 teilbar ist wird mit Fizz betitelt
+// Jede Zahl die nur durch 5 teilbar ist wird mit Buzz betitelt
+// Zahlen die sowhol durch 3 als auch 5 teilbar sind werden mit FizzBuzz betitelt
+// Alle anderen Zahlen werden normal ausgegeben
+// Wir wollen nun eine Funktion schreiben, die eine Obergrenze übergeben bekommt bis zu der gezählt werden soll
+// und jede dieser Zahlen soll dann auf ihre Teilbarkeit durch 3 und 5 geprüft werden und nach den obigen REgeln in der Konsole ausgegeben werden
+
+
+// Rekursive Funktionen
+// Funktionen, die sich in ihrem Körper selbst aufrufen
+// Müssen immer eine Bedingung enthalten, damit es keine endlos Schleife wird
+// Können schnell inneffizient werden, da es viele Funktionsaufrufe sind
+
+function faculty(limit) {
+    if (limit < 2)
+    {
+        return 1;
+    }
+    else {
+        return limit * faculty(limit -1);
+    }
+}
+
+// Lambda-Funktionen:
+// Alternativen zu den anonymen Funktionen
+// Anonyme Funktionen sind ohne Identifier
+// Weißt man im normalfall einer Variable zu, damit sie wiederverwendbar sind
+// Einfache anonyme Funktion
+let sum = function (numOne, numTwo) {return numOne + numTwo};
+let ergebnis3 = sum(8,9)
+
+// Sind identisch zu normalen Funktionen
+
+// Lambdas sind die kompakte Alternative zu den anonymen Funktionen
+// Pfeilfunktionen
+
+let quadruple = (a) => a*4;
+let square = (a) => a*a;
+
+function vervierfachen (a)
+{
+    return a * 4;
+}
+
+function quadrieren (a) {
+    return a * a;
+}
+
+// Lambdas werden meistens als Parameter für andere Funktionen benutzt
+// wenn eine Lambda Funktion mehrzeilig wird, verliert sie einige ihrer Vorteile
+let mehrzeilig = (a, b) => {
+    a *=2;
+    b *=2;
+    return a * b;
+}
+// Wir brauchen dann wieder die geschweiften Klammern und das return Keyword
