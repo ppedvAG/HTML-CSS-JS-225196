@@ -82,3 +82,127 @@ li>a::before {
 li>a::after {
     content: " Ich bin after";
 }
+
+/*
+    ::first-letter - Stylt den ersten Buchstaben eines Textes
+    ::first-line - Style die erste Zeile eines Absatzes
+*/
+
+h2#first-article::first-letter {
+    font-size: 48px;
+    color: orange;
+}
+
+h2+p::first-line {
+    background-color: aquamarine;
+}
+
+/*
+    ::selection - Stylt die Markierung des Benutzers
+*/
+
+p::selection {
+    background-color: yellow;
+}
+
+/*
+    ::placeholder - Stylt den Platzhalter eines Elementes
+*/
+
+#input1::placeholder {
+    color: teal;
+}
+
+/*
+    Bestimmt wie die Aufzählungszeichen bei li-Elementen aussehen
+*/
+article li::marker {
+    content: "Test";
+}
+
+/*
+    Pseudoklassen
+    :root - Root-Element innerhalb unseres Dokumentes
+    Ist spezifischer als html
+*/
+
+:root {
+    background-color: gainsboro;
+}
+
+*:hover {
+    color: pink;
+}
+
+/*
+    :not() 
+    Erfasst Elemente die nicht ausgeschlossen wurden innerhalb der Klammer
+*/
+
+/*
+    n-th Child
+
+    :first-child => Erfässt das erste Kindselement
+    :last-child => Erfässt das letzte Kindselement
+    :only-child => Erfässt das einzige Element
+    :nth-child(n+m) => Erfässt das n-te Kind eines Elements und beginnt bei m zu zählen
+    :nth-last-child(n+m) => Erfässt das n-te Kind eines Elements und beginnt bei m zu zählen in umgekehrter Reihenfolge
+    Statt n+m kann auch even oder odd einfügen
+*/
+
+li:first-child {
+    color: chartreuse;
+}
+
+li:last-child {
+    color: chartreuse; 
+}
+
+li:first-child:hover {
+    color: blue;
+}
+/*
+li:nth-child(even)
+{
+    background-color: blueviolet;
+}
+li:nth-child(odd)
+{
+    background-color: orange;
+}
+
+li:nth-last-child(even)
+{
+    background-color: blueviolet;
+}
+
+li:nth-last-child(odd)
+{
+    background-color: orange;
+}*/
+
+li:nth-child(1n+4) {
+    background-color: orange;
+}
+
+p {
+    color: brown;
+    font-size: larger;
+    background-color: aquamarine;
+}
+
+/*
+    :first-of-type => Stylt das erste Element dieses Typens
+    :last-of-type => Stylt das letzte Element dieses Typens
+    :only-of-type => Stylt das einzige Element dieses Typens
+    :nth-of-type(n+m) => Stylt jedes n-te Element dieses Typens beginnend bei m
+    :nth-last-of-type(n+m) => Stylt jedes n-te Element dieses Typens beginnend bei m, beginnt von hinten zu zählen
+*/
+
+/*
+    Bei Input-Elementen
+    :valid
+    :invalid
+    Stylen das Element je nachdem ob es gerade gültig ist oder ungültig
+
+*/
