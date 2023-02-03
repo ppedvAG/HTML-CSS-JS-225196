@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/js_fort/styles/videos.css">
+    <script src="/js_fort/scripts/videos.js" defer></script>
+    <title>HTMLMediaElement API</title>
+</head>
+<body>
+    <section class="player">
+        <video controls>
+            <source src="https://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4" type="video/mp4">
+        </video>
+    </section>
+    <section class="controls">
+        <!-- Jedes HTML-Attribut, das wir mit data- prefixen, steht uns in JavaScript zur Verfügung -->
+        <button class="play" data-icon="P" aria-label="play pause toggle"></button>
+        <button class="stop" data-icon="S" aria-label="stop"></button>
+        <section class="timer"><span aria-label="timer">00:00</span></section>
+        <button class="rwd" data-icon="B" aria-label="rewind"></button>
+        <button class="fwd" data-icon="F" aria-label="fast forward"></button>
+    
+    
+    
+    </section>
+</body>
+</html>
